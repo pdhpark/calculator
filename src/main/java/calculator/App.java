@@ -5,8 +5,8 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int cnt = 0;
-        int[] results = new int[10];
+        Queue<Integer> queue = new LinkedList<Integer>();
+
         while(true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int x = sc.nextInt();
@@ -22,50 +22,29 @@ public class App {
                 case '+':
                     result = x + y;
                     System.out.println("결과: " + result);
-                    if(cnt >= 10)
-                    {
-                        for(int i=0; i<9; i++) results[i] = results[i+1];
-                        results[9] = result;
-                    }
-                    else results[cnt] = result;
-                    cnt++;
+                    queue.add(result);
                     break;
                 case '-':
                     result = x - y;
                     System.out.println("결과: " + result);
-                    if(cnt >= 10)
-                    {
-                        for(int i=0; i<9; i++) results[i] = results[i+1];
-                        results[9] = result;
-                    }
-                    else results[cnt] = result;
-                    cnt++;
+                    queue.add(result);
                     break;
                 case '*':
                     result = x * y;
                     System.out.println("결과: " + result);
-                    if(cnt >= 10)
-                    {
-                        for(int i=0; i<9; i++) results[i] = results[i+1];
-                        results[9] = result;
-                    }
-                    else results[cnt] = result;
-                    cnt++;
+                    queue.add(result);
                     break;
                 case '/':
                     if (y != 0) {
                         result = x / y;
                         System.out.println("결과: " + result);
-                        if(cnt >= 10)
-                        {
-                            for(int i=0; i<9; i++) results[i] = results[i+1];
-                            results[9] = result;
-                        }
-                        else results[cnt] = result;
-                        cnt++;
+                        queue.add(result);
                     } else System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                     break;
             }
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String removeornot = sc.next();
+            if(removeornot.equals("remove")) queue.poll();
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String doorstop = sc.next();
             if(doorstop.equals("exit")) break;
