@@ -22,26 +22,46 @@ public class App {
                 case '+':
                     result = x + y;
                     System.out.println("결과: " + result);
-                    results[cnt] = result;
+                    if(cnt >= 10)
+                    {
+                        for(int i=0; i<9; i++) results[i] = results[i+1];
+                        results[9] = result;
+                    }
+                    else results[cnt] = result;
                     cnt++;
                     break;
                 case '-':
                     result = x - y;
                     System.out.println("결과: " + result);
-                    results[cnt] = result;
+                    if(cnt >= 10)
+                    {
+                        for(int i=0; i<9; i++) results[i] = results[i+1];
+                        results[9] = result;
+                    }
+                    else results[cnt] = result;
                     cnt++;
                     break;
                 case '*':
                     result = x * y;
                     System.out.println("결과: " + result);
-                    results[cnt] = result;
+                    if(cnt >= 10)
+                    {
+                        for(int i=0; i<9; i++) results[i] = results[i+1];
+                        results[9] = result;
+                    }
+                    else results[cnt] = result;
                     cnt++;
                     break;
                 case '/':
                     if (y != 0) {
                         result = x / y;
                         System.out.println("결과: " + result);
-                        results[cnt] = result;
+                        if(cnt >= 10)
+                        {
+                            for(int i=0; i<9; i++) results[i] = results[i+1];
+                            results[9] = result;
+                        }
+                        else results[cnt] = result;
                         cnt++;
                     } else System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                     break;
