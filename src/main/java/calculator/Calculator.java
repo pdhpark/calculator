@@ -4,7 +4,16 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Calculator {
-    public static Queue<Integer> calculator = new LinkedList<Integer>();
+
+    public Queue<Integer> getCalculator(){
+        return calculator;
+    }
+
+    public void setCalculator(){
+        calculator.poll();
+    }
+
+    private static Queue<Integer> calculator = new LinkedList<Integer>();
 
     public int calculate(char operator, int firstNumber, int secondNumber) {
         int result = 0;
