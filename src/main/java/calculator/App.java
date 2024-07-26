@@ -29,7 +29,7 @@ public class App {
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String inquiryornot = sc.next();
-            if (inquiryornot.equals("inquiry")) for (int a : cal1.getCalculator()) System.out.println(a);
+            if (inquiryornot.equals("inquiry")) cal1.inquiryResults();
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String doorstop = sc.next();

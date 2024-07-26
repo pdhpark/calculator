@@ -17,6 +17,10 @@ public class Calculator {
         calculator.poll();
     }
 
+    public void inquiryResults() {
+        for (int a : this.getCalculator()) System.out.println(a);
+    }
+
     private static Queue<Integer> calculator = new LinkedList<Integer>();
 
     public int calculate(char operator, int firstNumber, int secondNumber) {
