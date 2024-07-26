@@ -1,11 +1,15 @@
 package calculator;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
-        Calculator cal1 = new Calculator();
+
+        Queue<Integer> que1 = new LinkedList<Integer>();
+        Calculator cal1 = new Calculator(que1);
 
         Scanner sc = new Scanner(System.in);
 
@@ -35,5 +39,7 @@ public class App {
             String doorstop = sc.next();
             if (doorstop.equals("exit")) break;
         }
+
+        for(int a : que1) System.out.println(a);
     }
 }

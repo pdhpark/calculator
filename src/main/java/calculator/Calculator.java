@@ -5,6 +5,13 @@ import java.util.Queue;
 
 public class Calculator {
 
+    private Queue<Integer> calculator;
+
+    Calculator(Queue<Integer> calculator)
+    {
+        this.calculator = calculator;
+    }
+
     public Queue<Integer> getCalculator() {
         return calculator;
     }
@@ -20,8 +27,6 @@ public class Calculator {
     public void inquiryResults() {
         for (int a : this.getCalculator()) System.out.println(a);
     }
-
-    private static Queue<Integer> calculator = new LinkedList<Integer>();
 
     public int calculate(char operator, int firstNumber, int secondNumber) {
         int result = 0;
