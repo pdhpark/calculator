@@ -39,7 +39,5 @@ public class App {
             String doorstop = sc.next();
             if (doorstop.equals("exit")) break;
         }
-
-        for(int a : que1) System.out.println(a);
     }
 }
