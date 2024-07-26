@@ -5,11 +5,15 @@ import java.util.Queue;
 
 public class Calculator {
 
-    public Queue<Integer> getCalculator(){
+    public Queue<Integer> getCalculator() {
         return calculator;
     }
 
-    public void setCalculator(){
+    public void setCalculator() {
+        calculator.poll();
+    }
+
+    public void removeResult() {
         calculator.poll();
     }
 

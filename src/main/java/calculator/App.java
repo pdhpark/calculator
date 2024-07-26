@@ -9,7 +9,7 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        while(true) {
+        while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int x = sc.nextInt();
             System.out.print("두 번째 숫자를 입력하세요: ");
@@ -25,7 +25,7 @@ public class App {
 
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String removeornot = sc.next();
-            if (removeornot.equals("remove")) cal1.setCalculator();
+            if (removeornot.equals("remove")) cal1.removeResult();
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String inquiryornot = sc.next();
