@@ -12,6 +12,12 @@ public class App {
         Queue<Integer> que = new LinkedList<Integer>();
         ArrayList<Double> array = new ArrayList<Double>();
 
+        AddOperator addOperator = new AddOperator();
+        SubstractOperator substractOperator = new SubstractOperator();
+        MultiplyOperator multiplyOperator = new MultiplyOperator();
+        DivideOperator divideOperator = new DivideOperator();
+        ModOperator modOperator = new ModOperator();
+
         ArithmeticCalculator cal1 = new ArithmeticCalculator(que);
         CircleCalculator cal2 = new CircleCalculator(array);
         double radius = 0;
@@ -44,10 +50,36 @@ public class App {
                 System.out.print("사칙연산 기호를 입력하세요: ");
                 char z = sc.next().charAt(0);
 
+                if (z != '+' && z != '-' && z != '*' && z != '/') throw new FoolException("연산자오류입니다");
+
                 int result = 0;
 
-                result = cal1.calculate(z, x, y);
-                System.out.println(result);
+                switch (z) {
+                    case '+':
+                        result = cal1.calculate(addOperator, x, y);
+                        Calculator.calculator.add(result);
+                        System.out.println(result);
+                        break;
+                    case '-':
+                        result = cal1.calculate(substractOperator, x, y);
+                        Calculator.calculator.add(result);
+                        System.out.println(result);
+                        break;
+                    case '*':
+                        result = cal1.calculate(multiplyOperator, x, y);
+                        Calculator.calculator.add(result);
+                        System.out.println(result);
+                        break;
+                    case '/':
+                        result = cal1.calculate(divideOperator, x, y);
+                        Calculator.calculator.add(result);
+                        System.out.println(result);
+                        break;
+                    case '%':
+                        result = cal1.calculate(modOperator, x, y);
+                        Calculator.calculator.add(result);
+                        System.out.println(result);
+                }
 
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 String removeornot = sc.next();

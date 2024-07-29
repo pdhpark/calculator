@@ -1,6 +1,7 @@
 package calculator;
 
-public class MultiplyOperator {
+public class MultiplyOperator implements GrossCalculate {
+    @Override
     public int operate(int firstNumber, int secondNumber) {
         return firstNumber * secondNumber;
     }

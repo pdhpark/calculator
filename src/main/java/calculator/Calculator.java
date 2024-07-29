@@ -14,7 +14,6 @@ public class Calculator {
     static ArrayList<Double> calculatorcircle;
 
 
-
     //사칙연산 생성자
     Calculator(Queue<Integer> calculator) {
         this.calculator = calculator;
