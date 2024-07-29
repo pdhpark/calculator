@@ -9,11 +9,11 @@ public class App {
 
     public static void main(String[] args) {
 
-        Queue<Integer> que1 = new LinkedList<Integer>();
-        ArrayList<Double> que2 = new ArrayList<Double>();
+        Queue<Integer> que = new LinkedList<Integer>();
+        ArrayList<Double> array = new ArrayList<Double>();
 
-        ArithmeticCalculator cal1 = new ArithmeticCalculator(que1);
-        CircleCalculator cal2 = new CircleCalculator(que2);
+        ArithmeticCalculator cal1 = new ArithmeticCalculator(que);
+        CircleCalculator cal2 = new CircleCalculator(array);
         double radius = 0;
 
         Scanner sc = new Scanner(System.in);

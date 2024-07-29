@@ -3,6 +3,11 @@ package calculator;
 import java.util.Queue;
 
 public class ArithmeticCalculator extends Calculator {
+    AddOperator addOperator = new AddOperator();
+    SubstractOperator substractOperator = new SubstractOperator();
+    MultiplyOperator multiplyOperator = new MultiplyOperator();
+    DivideOperator divideOperator = new DivideOperator();
+
     ArithmeticCalculator(Queue<Integer> calculator) {
         super(calculator);
     }
@@ -13,21 +18,20 @@ public class ArithmeticCalculator extends Calculator {
             throw new FoolException("연산자오류입니다");
         switch (operator) {
             case '+':
-                calculator.add(firstNumber + secondNumber);
-                result = firstNumber + secondNumber;
+                result = addOperator.operate(firstNumber, secondNumber);
+                calculator.add(result);
                 break;
             case '-':
-                calculator.add(firstNumber - secondNumber);
-                result = firstNumber - secondNumber;
+                result = substractOperator.operate(firstNumber, secondNumber);
+                calculator.add(result);
                 break;
             case '*':
-                calculator.add(firstNumber * secondNumber);
-                result = firstNumber * secondNumber;
+                result = multiplyOperator.operate(firstNumber, secondNumber);
+                calculator.add(result);
                 break;
             case '/':
-                if (secondNumber == 0) throw new FoolException("0으로 나눈 오류입니다.");
-                calculator.add(firstNumber / secondNumber);
-                result = firstNumber / secondNumber;
+                result = divideOperator.operate(firstNumber , secondNumber);
+                calculator.add(result);
                 break;
         }
         return result;
