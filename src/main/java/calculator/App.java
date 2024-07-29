@@ -12,8 +12,8 @@ public class App {
         Queue<Integer> que1 = new LinkedList<Integer>();
         ArrayList<Double> que2 = new ArrayList<Double>();
 
-        Calculator cal1 = new Calculator(que1);
-        Calculator cal2 = new Calculator(que2);
+        ArithmeticCalculator cal1 = new ArithmeticCalculator(que1);
+        CircleCalculator cal2 = new CircleCalculator(que2);
         double radius = 0;
 
         Scanner sc = new Scanner(System.in);
