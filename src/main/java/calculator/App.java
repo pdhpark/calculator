@@ -7,6 +7,10 @@ import java.util.Scanner;
 
 public class App {
 
+    enum OperatorType {
+        ADD, SUBSTRACT, MULTIPLY, DIVIDE, MOD;
+    }
+
     public static void main(String[] args) {
 
         Queue<Integer> que = new LinkedList<Integer>();
@@ -49,8 +53,29 @@ public class App {
 
                 System.out.print("사칙연산 기호를 입력하세요: ");
                 char z = sc.next().charAt(0);
+                String operator = "";
 
-                if (z != '+' && z != '-' && z != '*' && z != '/') throw new FoolException("연산자오류입니다");
+                switch (z) {
+                    case '+' :
+                        operator = String.valueOf(OperatorType.ADD);
+                        break;
+                    case '-' :
+                        operator = String.valueOf(OperatorType.SUBSTRACT);
+                        break;
+                    case '*' :
+                        operator = String.valueOf(OperatorType.MULTIPLY);
+                        break;
+                    case '/' :
+                        operator = String.valueOf(OperatorType.DIVIDE);
+                        break;
+                    case '%' :
+                        operator = String.valueOf(OperatorType.MOD);
+                        break;
+                }
+
+                OperatorType optype = OperatorType.valueOf(operator);
+
+//                if (z != '+' && z != '-' && z != '*' && z != '/') throw new FoolException("연산자오류입니다");
 
                 int result = 0;
 
